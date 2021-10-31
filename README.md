@@ -33,6 +33,17 @@ To move multiple files just list them in `mv` command:
 ```
 $ mv a.txt b.txt <dir name>
 ```
+
+## Piping
+We can use `|` to pass the output of a command as input to the next command:
+```
+$ ls -la /etc | less
+```
+
+
+## String Operations
+- `sort`
+- `tail`: `tail -n 2`, `tail -n +2`, `tail -n -2`
 This will move file `a.txt` and `b.txt` to the specified directory. Note the directory must exist.
 
 - `-u`, `--update`: move only when the SOURCE file is newer than the destination file or when the destination file is missing
