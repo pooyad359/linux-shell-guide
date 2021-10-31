@@ -42,3 +42,32 @@ This will move file `a.txt` and `b.txt` to the specified directory. Note the dir
 Use `rm` to delete files and `rmdir` to remove empty directories. If the directory is not empty, use `rm -r <dir name>` to 
 recursively delete the content of the directory.
 - `-f`: Force remove. Overrides the interactive mode and deletes the file(s) without confirmation.
+
+
+## Standard I/O
+To redirect the content of a command to a file we can use `>`:
+```
+$ ls -a > output.txt
+```
+But if an error occurs the error would be returned in the console and the file would be empty. To redirect the error we could use `2>`. This will redirect the error messages to a file.
+```
+$ ls -a > output.txt 2> error.log
+```
+Linux file descriptors:
+- Standarnd Input (`0`): `stdin`
+- Standarnd Output (`1`): `stdout`
+- Standarnd error (`2`): `stderr`
+
+To redirect the errors to somewhere we don't care about we could use `/dev/null`. E.g.,
+```
+$ ls -a > output.txt 2> /dev/null
+```
+
+If we want to redirect the errors to the same file as well, we could use `2>&1`, which redirects `stderr` to `stdout`:
+```
+$ ls -a > output.txt 2>&1
+```
+Another way of doing the same thing is using `&>`:
+```
+$ ls -a &> output.txt
+```
