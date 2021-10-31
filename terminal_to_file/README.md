@@ -1,5 +1,6 @@
+[Source](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
 ```
-         || visible in terminal ||   visible in file   || existing
+          || visible in terminal ||   visible in file   || existing
   Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file   
 ==========++==========+==========++==========+==========++===========
     >     ||    no    |   yes    ||   yes    |    no    || overwrite
