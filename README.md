@@ -161,3 +161,25 @@ Use `ps` to list processes. To see all the running processes use `ps -Al`.
 - Switch window: `ctrl +b` -> `<window number>`
 - Select window: `ctrl +b` -> `w`
 - Re-attach a session: `tmux attach-session -t <name>`
+
+
+## Arithmatic
+Let `x=2` and `y=3`. To calculate the sum of two variables we could use ``echo $((x+y))``
+Other operations supported: `+`, `-`, `*`, `/`, `%`. Note `/` is integer division and returns an integer.
+
+## User Input
+To get input from user, we could use `read`. To pass a prompt message we could use the flag `-p`:
+```
+$ read -p "Enter a number: " input
+```
+
+## If statements
+```
+if [ "$<variable>" = "<value>" ]
+then
+    <commands>
+else
+    <commands>
+fi
+```
+Note the spaces in the if statement are critical.
