@@ -82,3 +82,43 @@ Another way of doing the same thing is using `&>`:
 ```
 $ ls -a &> output.txt
 ```
+
+## Tee
+To output something to `stdout` as well as to a file. E.g,
+```
+$ ls /etc | tee output.txt
+```
+To append to a file use flag `-a`:
+```
+$ ls /etc | tee -a output.txt
+```
+To output `stderr` to file as well use `2>&1` before pipe:
+```
+$ ls /etc 2>&1 | tee -a output.txt
+```
+
+## File Permission
+`chmod` is used to set permission to a file or a directory. There are three types of permissions:
+- Read: `r` has a value of 4
+- Write: `w` has a value of 2
+- Execute: `x` has a value of 1
+
+The permission value is a sum of the value of permissions mentioned above. E.g, permission to read (4) and execute (1) will have a value of 5. 
+
+The permissions are assigned to three groups:
+- Owner
+- Same group as owner
+- Others
+
+```
+$ chmod 750 file
+```
+In the example above the owner will have the permission to read/write/execute, the other users in the same group will have the permission to read/execute, and others won't have permission to access the file.
+
+An alternative way is to add/substract permission:
+- User: `u`
+- Group: `g`
+- Others: `o`
+- All: `a`
+
+E.g., to add execution permission to group, use `g+x`, or to remove write/execute permission from others use `o-wx`.
