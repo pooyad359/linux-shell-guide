@@ -183,3 +183,15 @@ else
 fi
 ```
 Note the spaces in the if statement are critical.
+
+
+## File size
+Command `du` can be used to estimate disk usage of files and directories.
+important flags:
+- `-B`, `--block-size=SIZE`: To specify the block size returned. E.g., `-BM` returns the sizes in megabytes. Units are K,M,G,T,P,E,Z,Y.
+- `-c`: Produces grand total
+- `-d`, `--max-depth=N`: print the total for a directory on if it is N or fewer levels below.
+- `-h`: Human readable
+- `-m`, `-k`: to view the sizes in megabyts or kilobytes. Same as using `-BM` or `-BK`
+- `-X`, `--exclude-form=FILE`: excludes file that match pattern stored in `FILE`
+- `--exclude=PATTERN`: exlude files that match `PATTERN`
