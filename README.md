@@ -195,3 +195,9 @@ important flags:
 - `-m`, `-k`: to view the sizes in megabyts or kilobytes. Same as using `-BM` or `-BK`
 - `-X`, `--exclude-form=FILE`: excludes file that match pattern stored in `FILE`
 - `--exclude=PATTERN`: exlude files that match `PATTERN`
+
+
+# TODO
+- [ ] `ln`
+- [ ] `grep`
+- [ ] `df`
