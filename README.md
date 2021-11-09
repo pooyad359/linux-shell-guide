@@ -209,6 +209,4 @@ important flags:
 - [ ] functions
 - [ ] Loops
 - [ ] `pr`
-- [ ] `env`
-- [ ] `unset`
-- [ ] `export`
+
