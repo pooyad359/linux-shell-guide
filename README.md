@@ -201,3 +201,14 @@ important flags:
 - [ ] `ln`
 - [ ] `grep`
 - [ ] `df`
+- [ ] `sed`
+- [ ] `nohup`
+- [ ] `jobs`
+- [ ] `history`
+- [ ] `dd`
+- [ ] functions
+- [ ] Loops
+- [ ] `pr`
+- [ ] `env`
+- [ ] `unset`
+- [ ] `export`
