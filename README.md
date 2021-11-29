@@ -199,9 +199,7 @@ important flags:
 
 # TODO
 - [ ] `ln`
-- [ ] `grep`
 - [ ] `df`
-- [ ] `sed`
 - [ ] `nohup`
 - [ ] `jobs`
 - [ ] `history`
