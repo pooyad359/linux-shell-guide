@@ -309,12 +309,30 @@ Expressions can be in five forms:
 - `-not`, `!`: NOT operator. `find . ! -name '*.jsx'`
   **`()` can be used to enforce precedence, but they should be used as `\(` and `\)`**
 
+## History
+
+To view a history of used commands, you can use `history`.
+Using the line number in history, you could execute the command again:
+
+```bash
+!128 # This will run command 128 from history
+```
+
+### Flags
+
+- `-c`: Clear history
+- `-dN`: Clear command number `N` in history
+
+### Examples
+
+- Get last 10 commands: `history | tail -n 10`
+- Search for a command using a keyword (e.g., `docker`): `history | grep docker`
+
 ## TODO
 
 - [ ] `ln`
 - [ ] `nohup`
 - [ ] `jobs`
-- [ ] `history`
 - [ ] `dd`
 - [ ] functions
 - [ ] Loops
