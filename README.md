@@ -341,6 +341,19 @@ Example for making a list all files alias: `alias la='ls -la'`
 Just typing `alias` will show you a list of existing aliases.
 To make an alias persistent, you can add the definition to `~/.bashrc` and run `source ~/.bashrc` to execute the changes.
 
+## XARGS
+
+Converts stdout into arguments for a command. Let's say command1 generates output in stdout and we want to use it as input for command2 (which doesn't accept arguments from stdout). Then we could leverage `xargs`:
+
+```bash
+command1 | xargs command2
+```
+
+Examples:
+
+- Remove a list of file that are stored in another file: `cat files_to_delete.txt | xargs rm`
+- View detailed list of all files larger than 10 MB: `find . -size +10M | xargs ls -l`
+
 ## TODO
 
 - [ ] `ln`
