@@ -328,11 +328,23 @@ Using the line number in history, you could execute the command again:
 - Get last 10 commands: `history | tail -n 10`
 - Search for a command using a keyword (e.g., `docker`): `history | grep docker`
 
+## Alias
+
+To create a alias for a command follow the pattern below:
+
+```bash
+alias new_command='command -args'
+```
+
+Example for making a list all files alias: `alias la='ls -la'`
+
+Just typing `alias` will show you a list of existing aliases.
+To make an alias persistent, you can add the definition to `~/.bashrc` and run `source ~/.bashrc` to execute the changes.
+
 ## TODO
 
 - [ ] `ln`
 - [ ] `nohup`
-- [ ] `jobs`
 - [ ] `dd`
 - [ ] functions
 - [ ] Loops
