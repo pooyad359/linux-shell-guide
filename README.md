@@ -233,12 +233,12 @@ fi
 
 Note the spaces in the if statement are critical.
 
-## File size
+## File size (Disk Usage)
 
 Command `du` can be used to estimate disk usage of files and directories.
 important flags:
 
-- `-B`, `--block-size=SIZE`: To specify the block size returned. E.g., `-BM` returns the sizes in megabytes. Units are K,M,G,T,P,E,Z,Y.
+- `-B`, `--block-size=SIZE`: To specify the block size returned. E.g., `-BM` returns the sizes in megabytes. Units are K, M, G, T, P, E, Z, Y.
 - `-c`: Produces grand total
 - `-d`, `--max-depth=N`: print the total for a directory on if it is N or fewer levels below.
 - `-h`: Human readable
@@ -246,12 +246,64 @@ important flags:
 - `-X`, `--exclude-form=FILE`: excludes file that match pattern stored in `FILE`
 - `--exclude=PATTERN`: exlude files that match `PATTERN`
 
+## Search for files
+
+Command `find` can be used to search the disk for files or directories.
+Usage: `find <path> <expression>`
+Example:
+
+```bash
+find . -name '*.js'
+```
+
+Expressions can be in five forms:
+
+- **Tests**: Return a true/false values which is used to filter results
+- **Actions**: They run other operations (e.g., printing) and return true/false if operation was successful
+- **Global Options**: Affect the operation of tests and actions
+- **Positional Options**: Only affect test or action directly follow after them
+- **Operators**: To join expressions. E.g., `-o` for logical OR and `-a` for logical AND. If missing `-a` is assumed.
+
+### Important Global Option flags
+
+- `-maxdepth LEVEL`: Maximum levels from the entered path to search for the pattern. E.g, `find . -maxdepth 2 -name '*.py'`
+- `-mindepth LEVEL`: Minimum levels from the entered path to search for the pattern. E.g, `find . -mindepth 2 -name '*.py'`
+
+### Important flags for Test Expressions
+
+- `-name PATTERN`: match filename to the pattern (`-iname` for case insensitive)
+- `-empty`: file/directory is empty
+- `-executable`: match files which are executable
+- `-path PATTERN`: match file path to the pattern (`-ipath` for case insensitive)
+- `-regex PATTERN`: match file path to the regex pattern (`iregex` for case insensitive)
+- `-size N[ckMG]`: Check the file size is exactly N (numbers are rounded up). Use +N to match files larger than N, and -N for files smaller than N. Block size can be `c` for character/byte, `k` for kilobytes, `M` for Megabytes, and `G` for Gigabytes.
+- `-type TYPE`: Matches the file type. The supported file types are:
+  - `d`: directory
+  - `f`: regular file
+  - `l`: symbolic link
+  - `s`: socket
+- `-mmin N`: File was modified N minutes ago. Use -/+ for less/more.
+- `-mtime N`: File was modified N days ago. Use -/+ for less/more.
+
+### Important flags for Action Expressions
+
+- `-delete`: Delete files
+- `-exec COMMAND \;`: Executes COMMAND for each file. `{}` can be used to pass the file path as argument to the command. E.g., `find . -name '*.exe' -exec echo {} \;`
+- `-execdir COMMAND \;`: Executes COMMAND from the subdirectory of the matched file. Use `{}` for file path.
+- `-print`: prints the file path
+- `-print0`: Same as print, but the results will be concatenated in a single line.
+
+### Operators
+
+- `-a`, `-and`: AND operator for expressions. `find . -name '*.jsx' -and -name '*.js'`. If no operator is used it will assume and operator.
+- `-o`, `-or`: OR operator for expressions.
+- `-not`, `!`: NOT operator. `find . ! -name '*.jsx'`
+  **`()` can be used to enforce precedence, but they should be used as `\(` and `\)`**
+
 ## TODO
 
 - [ ] `ln`
-- [ ] `grep`
 - [ ] `df`
-- [ ] `sed`
 - [ ] `nohup`
 - [ ] `jobs`
 - [ ] `history`
