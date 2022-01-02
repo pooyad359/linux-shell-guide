@@ -240,11 +240,20 @@ important flags:
 
 - `-B`, `--block-size=SIZE`: To specify the block size returned. E.g., `-BM` returns the sizes in megabytes. Units are K, M, G, T, P, E, Z, Y.
 - `-c`: Produces grand total
-- `-d`, `--max-depth=N`: print the total for a directory on if it is N or fewer levels below.
+- `-dN`, `--max-depth=N`: print the total for a directory on if it is `N` or fewer levels below.
 - `-h`: Human readable
 - `-m`, `-k`: to view the sizes in megabyts or kilobytes. Same as using `-BM` or `-BK`
 - `-X`, `--exclude-form=FILE`: excludes file that match pattern stored in `FILE`
 - `--exclude=PATTERN`: exlude files that match `PATTERN`
+
+## File System
+
+To see information about file system use `df` command.
+
+**flags:**
+
+- `-h`: Human readable
+- `-BX`: To set block size, where `X` is the size flag (similar to `du` block size flags)
 
 ## Search for files
 
@@ -303,7 +312,6 @@ Expressions can be in five forms:
 ## TODO
 
 - [ ] `ln`
-- [ ] `df`
 - [ ] `nohup`
 - [ ] `jobs`
 - [ ] `history`
