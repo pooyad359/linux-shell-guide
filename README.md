@@ -354,9 +354,22 @@ Examples:
 - Remove a list of file that are stored in another file: `cat files_to_delete.txt | xargs rm`
 - View detailed list of all files larger than 10 MB: `find . -size +10M | xargs ls -l`
 
+## Links
+
+Links are shortcuts to files or directories. To create a link you can use `ln` command.
+
+### Hard Link
+
+Creates a link to a file, which is treated as a second file that has a content insync with the original file. Essentially, both files will be pointing to the same place on disk. Therefore, even if the original file is deleted, the hard link will still work normally.
+`ln <original> <link_name>`
+
+### Soft Link
+
+The soft link points at the original file, and it can be treated in most ways like a hard link. But, if the original file is deleted, the link will not work anymore.
+Use `-s` flag in `ln` to specify it is a soft link (a.k.a. symbolic link).
+
 ## TODO
 
-- [ ] `ln`
 - [ ] `nohup`
 - [ ] `dd`
 - [ ] functions
