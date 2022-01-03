@@ -30,3 +30,4 @@ Search the content of a file. Simple example is `grep hello hello.txt`, which se
 - [ ] `sort`
 - [ ] `awk`
 - [ ] `uniq`
+- [ ] `cut`
