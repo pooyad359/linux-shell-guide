@@ -58,6 +58,16 @@ paste file1 file2
 
 ---
 
+## `look`
+
+Look for lines starting with a given prefix. Use `-f` for case insensitive search.
+
+```bash
+look def app.py # Finds
+```
+
+---
+
 ## `grep`
 
 Search the content of a file. Simple example is `grep hello hello.txt`, which searches in file `hello.txt` and returns the lines with the word `hello`.
