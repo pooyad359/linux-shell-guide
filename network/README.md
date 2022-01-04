@@ -5,3 +5,4 @@
 - [ ] `get`
 - [ ] `quit`
 - [ ] `ping`
+- [ ] `netstat`

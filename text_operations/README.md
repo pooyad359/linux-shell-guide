@@ -167,7 +167,5 @@ Examples:
 ## TODO
 
 - [ ] `sed`
-- [ ] `sort`
 - [ ] `awk`
-- [ ] `uniq`
-- [ ] `cut`
+- [ ] `join`
