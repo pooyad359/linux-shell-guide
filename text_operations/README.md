@@ -116,6 +116,44 @@ Print selected parts of lines. It cuts the line into columns and then subsets fr
 
 ---
 
+## Soritng (`sort`)
+
+Sorts lines in a file. Basic usage: `sort file.txt`
+
+### `sort` flags
+
+- `-b`: Ignore leading blanks
+- `-h`: Human readable numbers (e.g., 2K, 4M, etc)
+- `-M`: Month sort
+- `-n`: Numeric sort
+- `-r`: Reverse sort
+- `-u`: Sort and preserve only unique values
+- `--ignore-case`: Case insensitive sort
+- `-t`, `--field-separator`: Use a separator
+- `-k`, `--key`: Use a key (column) to sort.
+
+Examples:
+
+- Sort by a third column: `sort -t , -k 3`
+
+---
+
+## `uniq`
+
+Filters adjacent matching lines (`uniq file.txt`). Usually used with sort to get actual unique values (`sort file.txt | uniq`).
+
+### `uniq` flags
+
+- `-u`: Show only unique lines (lines with no repeat).
+- `-d`: Show only repeated lines.
+- `-c`: Show number of occurance for each line
+
+Examples:
+
+- Find top 10 most frequent lines: `sort newfile.txt | uniq -c | sort -rn | head -n 10`
+
+---
+
 ## TODO
 
 - [ ] `sed`
