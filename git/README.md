@@ -1,12 +1,24 @@
 # Git
 
-`git ls-files`: Lists the tracked files.
+## File Operation
+
+- `git ls-files`: Lists the tracked files.
+- `git rm <file>`: Deletes an unstaged file, and add the change to staged area.
+- `git rm --cached <file>`: Removes a file from being tracked.
+- `git mv <file> <new_name>`: Rename/Move file, and add the change to staged area.
+
+## History
+
+- `git log`: See commit history.
+- `git log <file>`: See commit history that contains `file`.
+- `-N`, `-n N`, `--max-count=N`: To show the last `N` commits.
+- `--oneline`: History with short (one line) description.
 
 ## Discard Changes
 
 ### Unstaged Changes
 
-- `git checkout <filename>`: To remove/undo uncommitted changes in a tracked file
+- `git checkout <file>`: To remove/undo uncommitted changes in a tracked file
 - `git checkout .`: Undo uncommited changes to all tracked files.
 - `git restore`: Same as `git checkout`
 
@@ -20,8 +32,8 @@
 
 To undo the changes to a staged files, first the files need to be unstaged, then, one of the methods above can be used to undo the changes.
 
-- `git reset <filename>`: To unstage a file
-- `git restore --staged <filename>`: To unstage a file
+- `git reset <file>`: To unstage a file
+- `git restore --staged <file>`: To unstage a file
 
 ### Commited Changes
 
