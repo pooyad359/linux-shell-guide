@@ -43,3 +43,12 @@ We can also move a process to background by running it and then pressing `Ctrl`+
 - `bg N`: Moves a process to background using the job number (`N`)
 - `fg N`: Move a process to foreground using the job number (`N`)
 - `kill %N`: Kill a process using job number. Refer to `kill` for the flags.
+
+## TODO
+
+- [ ] `top`
+- [ ] `pidof`
+- [ ] `nice`
+- [ ] `renice`
+- [ ] `df`
+- [ ] `free`

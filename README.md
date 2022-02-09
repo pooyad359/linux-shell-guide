@@ -372,6 +372,4 @@ Use `-s` flag in `ln` to specify it is a soft link (a.k.a. symbolic link).
 
 - [ ] `nohup`
 - [ ] `dd`
-- [ ] functions
-- [ ] Loops
 - [ ] `pr`
