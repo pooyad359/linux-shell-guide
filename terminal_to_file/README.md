@@ -1,7 +1,10 @@
+# Output Streaming
+
 [Source](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
-```
+
+```console
           || visible in terminal ||   visible in file   || existing
-  Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file   
+  Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file
 ==========++==========+==========++==========+==========++===========
     >     ||    no    |   yes    ||   yes    |    no    || overwrite
     >>    ||    no    |   yes    ||   yes    |    no    ||  append
@@ -21,7 +24,9 @@
 |& tee    ||   yes    |   yes    ||   yes    |   yes    || overwrite
 |& tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
 ```
-## List:
+
+## List
+
 - `command > output.txt`
 
 The standard output stream will be redirected to the file only, it will not be visible in the terminal. If the file already exists, it gets overwritten.
@@ -54,7 +59,7 @@ The standard output stream will be copied to the file, it will still be visible 
 
 The standard output stream will be copied to the file, it will still be visible in the terminal. If the file already exists, the new data will get appended to the end of the file.
 
-- (*)
+- (\*)
 
 Bash has no shorthand syntax that allows piping only StdErr to a second command, which would be needed here in combination with tee again to complete the table. If you really need something like that, please look at "How to pipe stderr, and not stdout?" on Stack Overflow for some ways how this can be done e.g. by swapping streams or using process substitution.
 

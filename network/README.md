@@ -1,6 +1,8 @@
 # Network
+
 - [ ] `ssh`
 - [ ] `put`
 - [ ] `get`
 - [ ] `quit`
-` [ ] `ping`
+- [ ] `ping`
+- [ ] `netstat`
