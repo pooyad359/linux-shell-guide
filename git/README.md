@@ -19,14 +19,14 @@
 ### Unstaged Changes
 
 - `git checkout <file>`: To remove/undo uncommitted changes in a tracked file
-- `git checkout .`: Undo uncommited changes to all tracked files.
+- `git checkout .`: Undo uncommitted changes to all tracked files.
 - `git restore`: Same as `git checkout`
 
 ### Untracked Files
 
 - `git clean -d`: To delete untracked files.
 - `git clean -dn`: Just lists the files that would be deleted.
-- `git cleand -df`: Forcefully deletes files
+- `git clean -df`: Forcefully deletes files
 
 ### Staged Changes
 
@@ -35,7 +35,7 @@ To undo the changes to a staged files, first the files need to be unstaged, then
 - `git reset <file>`: To unstage a file
 - `git restore --staged <file>`: To unstage a file
 
-### Commited Changes
+### Committed Changes
 
 - `git reset --soft HEAD~n`: Undo the last `n` commits. Keeps the changes made in the commits staged.
 - `git reset --hard HEAD~n`: Undo the last `n` commits. Discards all the changes.
@@ -51,7 +51,7 @@ To undo the changes to a staged files, first the files need to be unstaged, then
 
 ## Reflog
 
-- `git reflog`: Retursn a list of all the changes to HEAD, including resets.
+- `git reflog`: Returns a list of all the changes to HEAD, including resets.
 - `git reset --hard <hash>`: We can use reflog hash here to go back to specific point.
 - `git checkout <hash>`: To view code in detached mode.
   - `git checkout -b <branch>`: To move the checked out changes to another branch.
