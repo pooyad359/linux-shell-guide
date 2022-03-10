@@ -17,7 +17,7 @@ Add line number to text. It works similar to `cat -n`.
 
 ### `nl` flags
 
-- `-pBRE`: Returns all the lines but only numbers the lines that match regrular expression `BRE`. E.g., number lines that start with `import`: `nl -b p^def file.txt`
+- `-pBRE`: Returns all the lines but only numbers the lines that match regular expression `BRE`. E.g., number lines that start with `import`: `nl -b p^def file.txt`
 - `-sD`: Uses delimiter `D` between line number and the line. E.g., use `=` as delimiter: `nl -s= p^def file.txt`
 
 ---
@@ -77,9 +77,9 @@ Search the content of a file. Simple example is `grep hello hello.txt`, which se
 - `-i`: Case insensitive match
 - `-v`: Invert search. Only returns lines where the match is not found.
 - `-n`: Adds line number in the file to the output
-- `-w`: Matches the whole words. E.g., `grep -w hi hello.txt` will match the occurance of `hi` and not when it is part of another word like `hide`.
+- `-w`: Matches the whole words. E.g., `grep -w hi hello.txt` will match the occurrence of `hi` and not when it is part of another word like `hide`.
 - `-r`: Searches recursively in all files in a directory. Default directory is `./`
-- `-c`: Number of occurance per file.
+- `-c`: Number of occurrence per file.
 - `-E`: To search using extended regex pattern and return name of the file (if recursive) and the entire line. Using `-o` only the matched field will be returned.
 - `-h`: Exclude file name for each match
 - `-H`: Include file name for each match
@@ -157,7 +157,7 @@ Filters adjacent matching lines (`uniq file.txt`). Usually used with sort to get
 
 - `-u`: Show only unique lines (lines with no repeat).
 - `-d`: Show only repeated lines.
-- `-c`: Show number of occurance for each line
+- `-c`: Show number of occurrence for each line
 
 Examples:
 
@@ -227,3 +227,10 @@ sed '5,$p' file.txt # Show lines from 5 to the end
 
 - [ ] `awk`
 - [ ] `join`
+- [ ] `tr` translate/transform text
+- [ ] `expand`, `unexpand` change between tabs and spaces
+- [ ] `diff`, `comm` for comparing files
+- [ ] `fold` breaking lines base on their length
+- [ ] `split` split large files into smaller files
+- [ ] `join` For each pair of input lines with identical join fields
+- [ ] operators: `#`, `%`, etc.
