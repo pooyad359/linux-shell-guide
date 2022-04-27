@@ -82,6 +82,12 @@ esac
 
 ```
 
+## Inline if statement
+
+```bash
+[[ 2 -gt 1 ]] && echo true || echo false
+```
+
 ## TODO
 
 - [ ] functions
