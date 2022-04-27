@@ -2,13 +2,13 @@
 
 ## IF statement
 
-Be mindful of space between characters when usinf if statement.
+Be mindful of space between characters when using if statement.
 
 ```bash
-if [ <expression> ]
+if [[ <expression> ]]
 then
     <...>
-elif [ <expression> ]
+elif [[ <expression> ]]
     <...>
 else
     <...>
@@ -21,7 +21,7 @@ fi
 | --------- | ------------------------------------------------- | --------------- |
 | !         | Not operator                                      | `! $a > 2`      |
 | -n        | The length of STRING is greater than zero         | `-n $a`         |
-| -z        | The lengh of STRING is zero (ie it is empty)      | `-z $a`         |
+| -z        | The length of STRING is zero (ie it is empty)     | `-z $a`         |
 | =         | String equality                                   | `$a = "Hello"`  |
 | !=        | String inequality                                 | `$a != "Hello"` |
 | -eq       | Integer equality                                  | `$a -eq 2`      |
@@ -39,7 +39,7 @@ fi
 Use `&&` for AND and `||` for OR operator:
 
 ```bash
-if [ -r $1 ] && [ -s $1 ]
+if [[ -r $1 ]] && [[ -s $1 ]]
 then
     echo Do something
 fi
@@ -86,5 +86,5 @@ esac
 
 - [ ] functions
 - [ ] Loops
-- [ ] if-statement
-- [ ] case
+- [ ] inline if-statement
+- [ ] test
