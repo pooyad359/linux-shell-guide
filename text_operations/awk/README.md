@@ -75,3 +75,70 @@ There are variables that are used in `awk` and by changing them you can customiz
 ```bash
 awk 'BEGIN{FS=",";OFS="\t"} {print $1, $2}'
 ```
+
+## Conditional operation
+
+You can use if statement in `awk` code:
+
+```bash
+awk '{if ($1 > 20) print $1}'
+```
+
+or if-else:
+
+```bash
+awk '{if ($1 > 20) print $1; else print 0}'
+```
+
+## For-loop
+
+```bash
+awk '{
+    total =0
+    for (i=1;i<4;i++)
+    {
+        total += $i
+    }
+    print "Total:", total
+}'
+```
+
+## Math functions
+
+Some of the math functions available in `awk`:
+
+- `cos`
+- `sin`
+- `exp`
+- `int`
+- `log`
+- `rand`
+- `sqrt`
+
+## String functions
+
+- `length(STRING)`: Number of characters in a string
+- `index(STRING, CHAR)`: Returns the index of `CHAR` in `STRING` starting from `1`. Returns `0` if not found.
+- `gsub(PATTERN, REPLACE)`: Regex match and replace. Example, convert `.py` to `.js`: `ls | awk '{ gsub(/.py/, ".js"); print }'`
+- `sub(PATTERN, REPLACE, variable)`: Regex match and replace. Uses `variable` as input and saves the results inplace. Example, convert `.py` to `.js`: `ls | awk '{ sub(/.py/, ".js", $0); print $0 }'`
+- `match(STRING, PATTERN)`: Returns the index of the first match.
+- `split(STRING, output-array, SEPARATOR, separator-array)`: Splits the string into elements using the separator. The output array is saved in the second argument, and the separators in the separators. Example, remove file extensions: `ls | awk '{split($0, a, ".", seps); print a[1]; }'`.
+- `printf`: Allows printing using a C-like formatting.
+- `sprintf(TEMPLATE, value)`: Formats string similar to `printf` but the result is returned to a variable and not stdout.
+- `strtonum(STRING)`: Returns the numeric value of a string. If not a number, it will return `0`.
+- `substr(STRING, START, [END])`: Returns a substring.
+- `tolower(STRING)`: To lower case.
+- `toupper(STRING)`: To upper case.
+
+## Custom Functions
+
+You can define your own functions:
+
+```bash
+awk '
+function myfunc(x){
+    return sprintf("<<< %s >>>",x)
+}
+{print myfunc($0)}
+'
+```
