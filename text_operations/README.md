@@ -221,7 +221,6 @@ sed '5,$p' file.txt # Show lines from 5 to the end
 
 **More examples for `sed` can be found [here](https://linuxconfig.org/learning-linux-commands-sed)**
 
-
 ## Random String Generation
 
 ### Using `RANDOM`
@@ -260,7 +259,6 @@ In linux `/dev/urandom` generates random numbers. We pass it through `tr` to con
 cat /dev/urandom | tr -dc '[:alpha:]' | head -c 20
 ```
 
-
 ### Using `base64`
 
 This time we will convert `RANDOM` using `base64`. Note that this only generates 8 characters.
@@ -277,7 +275,6 @@ Openssl can generate random outputs in hex and base64 formats:
 openssl rand -hex 20
 openssl rand -base64 20
 ```
-
 
 ---
 
