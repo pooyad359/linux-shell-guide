@@ -221,6 +221,64 @@ sed '5,$p' file.txt # Show lines from 5 to the end
 
 **More examples for `sed` can be found [here](https://linuxconfig.org/learning-linux-commands-sed)**
 
+
+## Random String Generation
+
+### Using `RANDOM`
+
+environment variable `RANDOM` contains a random integer:
+
+```bash
+echo $RANDOM
+```
+
+By piping it through md5 checksum, we can get a random string:
+
+```bash
+echo $RANDOM | md5sum | head -c 25
+```
+
+### Using UUID
+
+Linux kernel has random UUID generator which we can use:
+
+```bash
+cat /proc/sys/kernel/random/uuid
+```
+
+To get rid of `-` in UUID, we can use `sed` command:
+
+```bash
+cat /proc/sys/kernel/random/uuid | sed 's/[-]//g'
+```
+
+### Using pseudo random device
+
+In linux `/dev/urandom` generates random numbers. We pass it through `tr` to convert it to string and get the first 20 characters using `head`:
+
+```bash
+cat /dev/urandom | tr -dc '[:alpha:]' | head -c 20
+```
+
+
+### Using `base64`
+
+This time we will convert `RANDOM` using `base64`. Note that this only generates 8 characters.
+
+```bash
+echo $RANDOM | base64
+```
+
+### Using `openssl`
+
+Openssl can generate random outputs in hex and base64 formats:
+
+```bash
+openssl rand -hex 20
+openssl rand -base64 20
+```
+
+
 ---
 
 ## TODO
