@@ -88,9 +88,79 @@ esac
 [[ 2 -gt 1 ]] && echo true || echo false
 ```
 
+## Functions
+
+Functions can be defined in two ways:
+
+```bash
+# Method 1
+function my-func {
+    commands
+}
+
+# Method 2
+my-func () {
+    commands
+}
+
+# Call the function
+my-func
+```
+
+### Scope
+
+Functions have access to global variables and can overwrite them. To avoid overwriting, you can specify that a variable is local using `local` keyword.
+
+```bash
+function my-func {
+    local var1=1
+}
+
+```
+
+If we don't use `local` keyword, then the variable is global (even if not defined before). We can use this property to set variables globally, or return values.
+
+```bash
+function my-func {
+    var1=1
+}
+
+my-func
+echo ${var1}
+```
+
+### Return Values
+
+Functions can return values. The returned value is used for status check of the function. If it runs successfully, it should return 0, otherwise, an integer from 1 to 255. You can use `$?` right after calling the function to check it's status.
+
+```bash
+function my-func {
+    local var1=1
+    return 0
+}
+
+my-func
+echo $?
+```
+
+### Arguments
+
+To pass arguments to a function we can just add them after function name, separated by space.
+
+```bash
+my-func a b c d
+```
+
+The arguments could be accessed via index variables (`$1`, `$2`, etc.). Some of other variables are:
+
+- `$#`: Number of arguments
+- `$0`: Name of the function
+- `$*`, `$@`: All the arguments passed to the function
+  - Using `"$*"` returns a single string with all variables (space separated). E.g., `"$1 $2 ... $n"`.
+  - Using `"$@"` returns a multiple strings for each variable (space separated). E.g., `"$1" "$2" ... "$n"`.
+  - In other cases `$*` and `$@` behave similarly.
+
 ## TODO
 
-- [ ] functions
 - [ ] Loops
-- [ ] inline if-statement
 - [ ] test
