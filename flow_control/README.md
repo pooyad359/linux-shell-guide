@@ -45,6 +45,39 @@ then
 fi
 ```
 
+## Arrays
+
+The simplest way to define an array is using `()`:
+
+```bash
+a=(1 2 3 4)
+```
+
+Or, you could assign values one by one:
+
+```bash
+a[0]=1
+a[1]=2
+```
+
+An array can be printed using `echo ${array[@]}` or `echo ${array[*]}`:
+
+### Appending to an array
+
+```bash
+a=(1 2 3)
+a+=(4)
+a+=(5 6)
+```
+
+### Deleting elements
+
+Use `unset` to delete elements:
+
+```bash
+unset array[2]
+```
+
 ## For Loops
 
 The general syntax of a for-loop in linux is:
@@ -66,6 +99,33 @@ done
 ```
 
 To loop over a sequence of integers, you could use {a..b} pattern which prints all the integers from `a` to `b` (inclusive), or {a..b..c} which prints all the integers from `a` to `b` taking steps of size `c` (E.g., {0..10..2} returns even numbers from 0 to 10).
+
+### Looping over array
+
+Looping over an array is similar to printing an array:
+
+```bash
+for i in ${array[@]}; do
+    echo $i
+done
+```
+
+To loop over index of array (instead of values), use `!` before the array name:
+
+```bash
+array=(a b c)
+for i in ${!array[@]}; do
+    echo $i
+done
+```
+
+Returns:
+
+```console
+0
+1
+2
+```
 
 ## CASE
 
