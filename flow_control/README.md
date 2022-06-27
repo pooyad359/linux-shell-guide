@@ -45,6 +45,28 @@ then
 fi
 ```
 
+## For Loops
+
+The general syntax of a for-loop in linux is:
+
+```bash
+for item in list
+do
+    commands
+done
+```
+
+Example:
+
+```bash
+for i in 1 2 3 4 5
+do
+    echo $i
+done
+```
+
+To loop over a sequence of integers, you could use {a..b} pattern which prints all the integers from `a` to `b` (inclusive), or {a..b..c} which prints all the integers from `a` to `b` taking steps of size `c` (E.g., {0..10..2} returns even numbers from 0 to 10).
+
 ## CASE
 
 ```bash
