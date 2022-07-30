@@ -29,10 +29,10 @@ fi
 | -lt       | Integer less than                                 | `$a -lt 2`      |
 | -d        | path exists as directory                          | `-d $path`      |
 | -e        | File exists                                       | `-e file.txt`   |
-| -r        | File exists and read permission granted           | `-e file.txt`   |
-| -s        | File exists and it's size is greater than zero    | `-e file.txt`   |
-| -w        | File exists and the write permission is granted   | `-e file.txt`   |
-| -x        | File exists and the execute permission is granted | `-e file.txt`   |
+| -r        | File exists and read permission granted           | `-r file.txt`   |
+| -s        | File exists and it's size is greater than zero    | `-s file.txt`   |
+| -w        | File exists and the write permission is granted   | `-w file.txt`   |
+| -x        | File exists and the execute permission is granted | `-x file.txt`   |
 
 ### Boolean Operation
 
@@ -241,8 +241,3 @@ The arguments could be accessed via index variables (`$1`, `$2`, etc.). Some of 
   - Using `"$*"` returns a single string with all variables (space separated). E.g., `"$1 $2 ... $n"`.
   - Using `"$@"` returns a multiple strings for each variable (space separated). E.g., `"$1" "$2" ... "$n"`.
   - In other cases `$*` and `$@` behave similarly.
-
-## TODO
-
-- [ ] Loops
-- [ ] test
