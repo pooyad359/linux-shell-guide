@@ -15,6 +15,8 @@ Another way to use substitution is by specifying a pattern for filtering the lin
 
 You could also operate on a specific line number, e.g., `3 s/abc/ABC/g` is only applied to the third line. You could also give a range of line numbers separated with comma, e.g., `1,3 s/abc/ABC/g` (You could use `$` as last line number).
 
+**Use `-r` for extended regular expression**
+
 ### Print matches
 
 Instead of `/g` use `/p` with `-n` flag, to see the output only when a substitution happened (i.e., when there was a match).
@@ -23,6 +25,10 @@ Instead of `/g` use `/p` with `-n` flag, to see the output only when a substitut
 sed -n 's/test/another test/p' file.txt
 
 ```
+
+#### Simple print matches
+
+To simply just print lines that match a specific pattern, use `sed -n /<pattern>/ p`. This will be similar to using `grep`.
 
 ### Using delimiters
 
@@ -66,6 +72,17 @@ Filter by line number:
 sed '5,$p' file.txt # Show lines from 5 to the end
 ```
 
+## Add lines
+
+- Add a line after the match (append): `sed '/PATTERN/ a "SOME TEXT"'`
+- Add a line before the match (insert): `sed '/PATTERN/ i "SOME TEXT"'`
+- Replace the line with a new line: `sed '/PATTERN/ c "SOME TEXT"'`
+
+## Character Mapping
+
+For mapping a list of characters to a new list of character.
+Convert `{}` to `<>`: `sed 'y/{}/<>/'`
+
 ## Multiple commands
 
 You can apply multiple `sed` commands at once by separating them with semicolon and using `-e` flag:
@@ -76,7 +93,7 @@ sed -e 's/hello/Hello/; s/world/World/' file.txt
 
 ## Read Commands from a file
 
-If you are applying multiple commands, using them in command line won't look pretty. You can put the commands in a separate file and invoke them using `-f` flag followed by name of the file.
+If you are applying multiple commands, using them in command line won't look pretty. You can put the commands in a separate file and invoke them using `-f` (or `--file`) flag followed by name of the file.
 
 ```bash
 sed -f commands file.txt
@@ -88,5 +105,16 @@ sed -f commands file.txt
 - Delete all spaces in front of every line: `sed 's/^[ ^t]*//' file.txt`
 - Delete all spaces at the end of every line: `sed 's/[ ^t]*$//' file.txt`
 - Delete all spaces in front and at the end of every line: `sed 's/^[ ^t]*//;s/[ ^]*$//' file.txt`
+- Count the number of lines (similar to `wc -l`): `sed -n '$='`
+- Return the line number for lines that match the pattern: `sed -n '/PATTERN/ ='`
+- Replace all `'` with `"` (similar to `tr \' \"`): `sed 'y/'"'"'/"/'`
+
+## Other Examples
+
+| Description | Pattern | Input | Output |
+|-|-|-|-|
+|Use the matched string and put it in `<>`|`sed -r 's/"[a-zA-Z0-9_\.\-]*"/<&>/'`|`{"Hello-There"}`|`{<"Hello-There">}`|
+|Use the matched group and put it in `<>`|`sed -r 's/"(\w*)"/<\1>/'`|`"Hello" There`|`<Hello> There`|
+|Return matched group|`sed -rn 's/Today is (.*)/\1/p'`|`Today is Monday`|`Monday`|
 
 **More examples for `sed` can be found [here](https://linuxconfig.org/learning-linux-commands-sed)**
