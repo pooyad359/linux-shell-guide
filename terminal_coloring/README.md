@@ -59,4 +59,5 @@ for x in {0..8}; do
 done
 echo "" 
 ```
+
 ![Color Matrix](color-matrix.png "Color Matrix")
