@@ -108,11 +108,14 @@ sed -f commands file.txt
 - Count the number of lines (similar to `wc -l`): `sed -n '$='`
 - Return the line number for lines that match the pattern: `sed -n '/PATTERN/ ='`
 - Replace all `'` with `"` (similar to `tr \' \"`): `sed 'y/'"'"'/"/'`
+- View lines 5 to 8: `sed -n '5,8p' file.txt`
+- View lines 5 to 8 and 10 to 12: `sed -n -e '5,8p' -e '10,12p' file.txt`
+- View all lines except lines 5 to 8: `sed '5,8d' file.txt`
 
 ## Other Examples
 
 | Description | Pattern | Input | Output |
-|-|-|-|-|
+|-------------|---------|-------|--------|
 |Use the matched string and put it in `<>`|`sed -r 's/"[a-zA-Z0-9_\.\-]*"/<&>/'`|`{"Hello-There"}`|`{<"Hello-There">}`|
 |Use the matched group and put it in `<>`|`sed -r 's/"(\w*)"/<\1>/'`|`"Hello" There`|`<Hello> There`|
 |Return matched group|`sed -rn 's/Today is (.*)/\1/p'`|`Today is Monday`|`Monday`|
