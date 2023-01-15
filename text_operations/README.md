@@ -237,6 +237,51 @@ Examples:
 
 ---
 
+## Splitting files with `split`
+
+### Split by lines
+
+Split the file based on the number of lines using `-l` flag:
+
+```bash
+split -l 10 file
+```
+
+Creates multiple files each with 10 lines (except last files).
+
+### Split by number
+
+Split the file into a fix number of files using `-n` flag:
+
+```bash
+split -n 5 file
+```
+
+Splits the file into 5 files with similar sizes (except last files).
+
+### Split by size
+
+Split the file into file of fixed size using `-b` flag:
+
+```bash
+split -b 512 file
+```
+
+Splits the file into files of size 512 bytes (except last files). You can also use kilobytes or megabytes, e.g., `split -b 512k file` or `split -b 512m file`.
+
+Another way to achieve this is using `-C` flag, which avoids breaking the lines.
+
+```bash
+split -C 512 file
+```
+
+__Other Flags:__
+
+- `-d`: Use numeric suffixes, not alphabetic
+- `-x`: Use hex suffixes, not alphabetic
+
+---
+
 ## `tr`
 
 Translate/Delete characters.
