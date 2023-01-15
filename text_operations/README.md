@@ -66,6 +66,54 @@ paste file1 file2
 
 ---
 
+## `join`
+
+Joins the content of two files similar to a left inner join operation in SQL. To do the operation properly, you should make sure the common field is sorted in both files. By default, it uses the first column of each file, using white space as field separator.
+
+```bash
+join file1 file2
+```
+
+__Flags:__
+
+- `-t`: Specify the field separator. E.g., to use comma: `join -t ',' file1 file2`
+- `-1`: Specify common field of first file. E.g., Use the third column of file1: `join -1 3 file1 file2`
+- `-2`: Specify common field of second file. E.g., Use the third column of file2: `join -2 3 file1 file2`
+- `-a FILENUM`: Print unpaired lines from a file. `FILENUM` is `1` or `2` to specify first or second file.
+- `-e VAL`: Replace missing fields with `VAL`.
+
+### Join two csv files
+
+Imagine we have the following files:
+`population.csv`:
+
+```csv
+Country,Population
+China,1412600000
+India,1375586000
+USA,334233854
+Indonesia,275773800
+Pakistan,235825000
+```
+
+and
+`area.csv`:
+
+```csv
+Country,Area
+Russia,16378410
+Canada,9984670
+China,9596961
+USA,9525067
+India,3287263
+```
+
+We want to join the files on country name. First, we need to sort the files using `csvsort` then join them:
+
+```bash
+join --header -t ',' <(csvsort -c 1 population.csv ) <(csvsort -c 1 area.csv)
+```
+
 ## `look`
 
 Look for lines starting with a given prefix. Use `-f` for case insensitive search.
@@ -232,12 +280,9 @@ openssl rand -base64 20
 
 ## TODO
 
-- [ ] `awk`
-- [ ] `join`
 - [ ] `tr` translate/transform text
 - [ ] `expand`, `unexpand` change between tabs and spaces
 - [ ] `diff`, `comm` for comparing files
 - [ ] `fold` breaking lines base on their length
 - [ ] `split` split large files into smaller files
-- [ ] `join` For each pair of input lines with identical join fields
 - [ ] operators: `#`, `%`, etc.
