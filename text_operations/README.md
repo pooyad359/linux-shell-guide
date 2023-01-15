@@ -1,5 +1,25 @@
 # Text Operations
 
+## Table of Contents
+
+1. [`cat`](#cat)
+2. [`diff`](#diff)
+3. [`nl`](#nl)
+4. [`wc`](#word-count-wc)
+5. [`paste`](#paste)
+6. [`join`](#join)
+7. [`look`](#look)
+8. [`grep`](#grep)
+9. [`head` and `tail`](#head-and-tail)
+10. [Remove columns (`colrm`)](#remove-columns-colrm)
+11. [`cut`](#cut)
+12. [Generate Sequences (`seq`)](#generate-sequence-seq)
+13. [Sorting (`sort`)](#sorting-sort)
+14. [Split files with (`split`)](#split-files-with-split)
+15. [`tr`](#tr)
+16. [`uniq`](#uniq)
+17. [Random String Generation](#random-string-generation)
+
 ## `cat`
 
 Print and concatenate files.
@@ -237,7 +257,7 @@ Examples:
 
 ---
 
-## Splitting files with `split`
+## Split files with `split`
 
 ### Split by lines
 
@@ -378,10 +398,3 @@ Openssl can generate random outputs in hex and base64 formats:
 openssl rand -hex 20
 openssl rand -base64 20
 ```
-
----
-
-## TODO
-
-- [ ] `split` split large files into smaller files
-- [ ] operators: `#`, `%`, etc.
