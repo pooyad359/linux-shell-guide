@@ -57,11 +57,13 @@ paste file1 file2
 - `-s`: paste one file at a time instead of in parallel, i.e., lines of each file will be concatenated into a single row.
 
 ### Examples for `paste`
+
 - Turn a column of numbers into a single line separated by comma:
 `cat file.txt | paste -sd ,`
 
 - Calculate sum from a column of numbers:
 `cat file.txt | paster -sd + | bc`
+
 ---
 
 ## `look`
@@ -170,7 +172,6 @@ Examples:
 - Find top 10 most frequent lines: `sort newfile.txt | uniq -c | sort -rn | head -n 10`
 
 ---
-
 
 ## Random String Generation
 
