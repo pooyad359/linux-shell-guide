@@ -11,6 +11,22 @@ To concatenate multiple files into one: `cat file1 file2 > target`
 
 ---
 
+## `diff`
+
+Compare files line by line. In it's most basic usage (`diff file1 file2`), it lists all the changes to turn `file1` into `file2`.
+__Flags:__
+
+- `-y`, `--side-by-side`: Show the changes side-by-side
+- `--unified`: Uses unified format to show changes (similar to `git diff`).
+- `-q`, `--brief`: Just prints a line if the files are not the same.
+- `-s`: Report when two files are the same.
+- `-r`, `--recursive`: Recursively compare any subdirectories found.
+
+### Useful examples of `diff`
+
+- Show the list of files that differ in two directories:
+  `diff -r -q dir1 dir2`
+
 ## `nl`
 
 Add line number to text. It works similar to `cat -n`.
@@ -306,8 +322,5 @@ openssl rand -base64 20
 
 ## TODO
 
-- [ ] `expand`, `unexpand` change between tabs and spaces
-- [ ] `diff`, `comm` for comparing files
-- [ ] `fold` breaking lines base on their length
 - [ ] `split` split large files into smaller files
 - [ ] operators: `#`, `%`, etc.
