@@ -199,6 +199,22 @@ Print selected parts of lines. It cuts the line into columns and then subsets fr
 
 ---
 
+## Generate Sequence (`seq`)
+
+Generate a sequence of numbers. There are three main ways to use this command:
+
+1. `seq NUM`: Generate a sequence from 1 to `NUM` (inclusive).
+2. `seq NUM1 NUM2`: Generates a sequence from `NUM1` to `NUM2` (inclusive).
+3. `seq NUM1 STEP NUM2`: Generate a sequence starting from `NUM1` to `NUM2` in steps of `STEP`.
+
+__Flags:__
+
+- `-s SEP`: Use `SEP` as separator. Default is new line.
+- `-w`: Equal width by padding zeros to left.
+- `-f FORMAT`: Format the sequences according to `FORMAT`. `FORMAT` is a printf style formatting string. E.g., `-f '%04g'` to print `4` digits sequences with leading zeros.
+
+---
+
 ## Sorting (`sort`)
 
 Sorts lines in a file. Basic usage: `sort file.txt`
