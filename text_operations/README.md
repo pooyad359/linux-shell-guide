@@ -205,6 +205,32 @@ Examples:
 
 ---
 
+## `tr`
+
+Translate/Delete characters.
+
+- Replace character: Replace `a` with `A` $\rightarrow$ `tr a A`
+- Replace group of characters: Replace `a`, `b`, and `c`, with `A`, `B`, and `C` $\rightarrow$ `tr 'abc' 'ABC'`
+- Delete a character: Remove `,` $\rightarrow$ `tr -d ,`
+- Translate characters from lower case to upper case: `tr '[:lower:]' '[:upper:]'`
+
+### Interpreted Characters
+
+- `\n`: new line
+- `\b`: backspace
+- `\r`: return
+- `\t`: horizontal tab
+- `\v`: Vertical tab
+- `[:alnum:]`:all letters and digits
+- `[:alpha:]`: all letters
+- `[:blank:]`: all whitespace
+- `[:digit:]`: all digits
+- `[:xdigit:]`: all hexadecimal digits
+- `[:lower:]`: all lower case letters
+- `[:upper:]`: all upper case letters
+
+---
+
 ## `uniq`
 
 Filters adjacent matching lines (`uniq file.txt`). Usually used with sort to get actual unique values (`sort file.txt | uniq`).
@@ -280,7 +306,6 @@ openssl rand -base64 20
 
 ## TODO
 
-- [ ] `tr` translate/transform text
 - [ ] `expand`, `unexpand` change between tabs and spaces
 - [ ] `diff`, `comm` for comparing files
 - [ ] `fold` breaking lines base on their length
