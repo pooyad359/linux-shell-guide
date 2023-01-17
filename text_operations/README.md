@@ -336,7 +336,7 @@ Filters adjacent matching lines (`uniq file.txt`). Usually used with sort to get
 
 - `-u`: Show only unique lines (lines with no repeat).
 - `-d`: Show only repeated lines.
-- `-c`: Show number of occurrence for each line
+- `-c`: Show number of occurrence for each line (line frequency)
 
 Examples:
 
