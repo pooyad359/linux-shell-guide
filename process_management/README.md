@@ -1,8 +1,31 @@
 # Process Management
 
+## Basics
+
+Run a process in the background by adding `&` to the end of the line.
+
+```bash
+sh ./script.sh &
+```
+
+To see the list of running background jobs, use `jobs`, and to bring them to the foreground use `fg`. To send it to the background first we need to stop the processes by pressing `ctrl + Z` and then enter `bg` in the terminal. If there are multiple jobs, we can specify the job number: `$ fg %2`.
+
+If we separate two commands by `&`, the first one will run in the background and the second one in the foreground. In other words, the commands will run asynchronously.
+
+`&&`: When used between two commands, the second command will only be executed if the first one succeeds.
+`||`: When used between two commands, the second command will only be executed if the first one fails.
+
+Use `ps` to list processes. To see all the running processes use `ps -Al`.
+
+## Terminate a Process
+
+- `kill`: Terminate a process using id. `$ kill 8722`
+- `kill -KILL`: Force kill a process
+- `kill -l`: Lists all options for killing a process
+
 ## List Processes
 
-Use command `ps` to see a list of running processes. By default it only shows the processes run by the user. To see all the processes use `ps ax` for short discription of processes or `ps axww` for full discription.
+Use command `ps` to see a list of running processes. By default it only shows the processes run by the user. To see all the processes use `ps ax` for short description of processes or `ps axww` for full description.
 
 ### Examples
 
