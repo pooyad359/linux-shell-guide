@@ -2,7 +2,7 @@
 
 ## Linux version
 
-## Using `uname`
+### Using `uname`
 
 ```bash
 uname
