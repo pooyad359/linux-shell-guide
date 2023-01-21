@@ -398,3 +398,11 @@ Openssl can generate random outputs in hex and base64 formats:
 openssl rand -hex 20
 openssl rand -base64 20
 ```
+
+## View Large Text Files
+
+To view a text file in the command line, use `less`. It allows viewing the file without printing the entire content to standard output.
+
+```bash
+less file
+```
