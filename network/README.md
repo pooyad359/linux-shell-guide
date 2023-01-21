@@ -35,6 +35,18 @@ curl -X POST <url>
   - Data from file: `curl -d @<file path> <url>`
 - Custom HTTP Method (e.g., `PUT` request): `curl --request PUT url`
 
+## `wget`
+
+Easy-to-use tool for downloading files. To download a file simply use: `wget <url>`.
+
+### Important Flags for `wget`
+
+- `-O`: To specify output file name. `wget -O <filename> <url>`
+- `--user` and `--password`: To specify user credentials. `wget --user=<username> --password=<password> <url>`
+Examples:
+
+- Download a page and all its resources: `wget --page-requisites --convert-links <url>`
+
 ## `netstat`
 
 ### Open ports
