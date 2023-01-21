@@ -29,11 +29,14 @@ curl -X POST <url>
 
 ### Important Flags for `curl`
 
-- Authentication (`-u` or `--user`): `curl --user username:password`
+- Authentication (`-u` or `--user`): `curl --user username:password <url>`
 - Header (`-H`, `--header`): `curl -H 'ContentType: application/json' <url>`
 - Data (`-d`, `--data`): `curl -d '<data>' <url>`
   - Data from file: `curl -d @<file path> <url>`
 - Custom HTTP Method (e.g., `PUT` request): `curl --request PUT url`
+- Cookies (`-b`, `--cookie`): `curl -b <name>=<value> <url>`
+  - From file: `curl -b <file> <url>`
+- Follow Redirection (`-L`): `curl -L <url>`
 
 ## `wget`
 
