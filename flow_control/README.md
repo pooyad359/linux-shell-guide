@@ -15,6 +15,8 @@ else
 fi
 ```
 
+Note the spaces in the if statement are critical.
+
 ### Operators
 
 | Operators | Description                                       | Example         |
