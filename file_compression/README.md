@@ -44,6 +44,14 @@ Examples:
 - Extract files from archive to a specific directory: `tar -xf archive.tar -C directory`
 - View the content of archive: `tar -tf archive.tar`
 
+### `tar` falgs
+
+- `-z`: Compress with gzip
+- `-c`: Create an archive
+- `-f`: Name of the archive
+- `-x`: Extract archive to disk
+- `-a`: Auto compress. Based on archive extension select the type of compression, e.g., `.tgz`, `.tar.bz2.uu`, `.zip`, etc.
+
 ### TAR + GZIP
 
 We can make `tar` to compress the archive using `gzip` by passing the flag `-z`.
