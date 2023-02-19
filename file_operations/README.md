@@ -155,3 +155,10 @@ Creates a link to a file, which is treated as a second file that has a content i
 
 The soft link points at the original file, and it can be treated in most ways like a hard link. But, if the original file is deleted, the link will not work anymore.
 Use `-s` flag in `ln` to specify it is a soft link (a.k.a. symbolic link).
+
+## Program Info
+
+- `which <program>`: Full path to the command/program.
+- `whereis <program>`: All existing paths for the program including `man` page.
+- `whatis <program>`: Short description of a command/program.
+- `man <program>`: Manual page for the command/program.
