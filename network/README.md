@@ -60,6 +60,12 @@ This command displays open ports and some details about them.
 netstat -nltp
 ```
 
+### Netstat flags
+
+- `--all`: List all ports
+- `--listening`: List all listening ports
+- `--tcp`: List listening tcp ports
+
 ## Find your public IP
 
 ```bash
@@ -71,9 +77,21 @@ curl whatismyip.akamai.com
 - Ping a host: `ping <url>`
 - Ping certain number of times: `ping -c <count> <url>`
 
-- [ ] `ssh`
-- [ ] `put`
-- [ ] `get`
-- [ ] `quit`
-- [ ] `ping`
-- [ ] `netstat`
+## `host`
+
+Search for information about an internet host by name of ip.
+
+```bash
+host www.google.com
+```
+
+### Secure Shell (`ssh`)
+
+ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.
+basic usage is `ssh <username>@<host>`:
+
+```bash
+ssh user@192.168.1.12
+```
+
+To add private key: `ssh -i <key-file> <username>@<host>`
