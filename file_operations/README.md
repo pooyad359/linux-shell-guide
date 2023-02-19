@@ -156,6 +156,10 @@ Creates a link to a file, which is treated as a second file that has a content i
 The soft link points at the original file, and it can be treated in most ways like a hard link. But, if the original file is deleted, the link will not work anymore.
 Use `-s` flag in `ln` to specify it is a soft link (a.k.a. symbolic link).
 
+### `readlink`
+
+It can be used to disclose the file that a symbolic link points to.
+
 ## Program Info
 
 - `which <program>`: Full path to the command/program.
