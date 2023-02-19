@@ -186,3 +186,12 @@ removes the file name from a path, i.e., returns the name of the directory:
 file=/home/user/file.txt
 dirname $file # /home/user
 ```
+
+## Create Temporary File
+
+`mktemp` creates a temporary file and returns its path.
+
+```bash
+mktemp
+# /tmp/tmp.VpWN5xysbv
+```
