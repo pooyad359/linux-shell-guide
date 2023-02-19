@@ -166,3 +166,23 @@ It can be used to disclose the file that a symbolic link points to.
 - `whereis <program>`: All existing paths for the program including `man` page.
 - `whatis <program>`: Short description of a command/program.
 - `man <program>`: Manual page for the command/program.
+
+## File Path
+
+### `basename`
+
+Returns the file name:
+
+```bash
+file=/home/user/file.txt
+basename $file # file.txt
+```
+
+### `dirname`
+
+removes the file name from a path, i.e., returns the name of the directory:
+
+```bash
+file=/home/user/file.txt
+dirname $file # /home/user
+```
