@@ -195,3 +195,27 @@ dirname $file # /home/user
 mktemp
 # /tmp/tmp.VpWN5xysbv
 ```
+
+## Open files
+
+### `lsof`
+
+Use command `lsof` to list open files and the corresponding processes. `lsof <file>` finds processes that have opened the given file.
+
+- `-c <process_name>`: Show files and network connections opened by a specific process (identified by its name).
+- `-p <PID>`: Show files and network connections opened by a specific process (identified by its Process ID).
+- `-i`: Display network-related information, such as open network sockets.
+- `-n`: Display numerical addresses (IP addresses and port numbers) instead of resolving them to hostnames and service names.
+- `-t`: Show only TCP connections and listening ports.
+
+### `fuser`
+
+Another command that can acheive this is `fuser`.  It showss process IDs currently using files or sockets.
+
+- Find processes accessing a file: `fuser <filepath>`
+
+- `-m`: Show processes accessing the specified mount point.
+- `-k`: Send a signal (SIGKILL by default) to the processes accessing the specified files or directories.
+- `-v`: Display additional information, including signal and kill options, in the output.
+- `-u`: Show processes owned by a specific user accessing the specified files or directories.
+- `-i`: Prompt before sending the signal to the processes, allowing you to confirm the action.
