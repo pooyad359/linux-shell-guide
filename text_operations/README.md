@@ -18,7 +18,8 @@
 14. [Split files with (`split`)](#split-files-with-split)
 15. [`tr`](#tr)
 16. [`uniq`](#uniq)
-17. [Random String Generation](#random-string-generation)
+17. [`shuf`](#shuf)
+18. [Random String Generation](#random-string-generation)
 
 ## `cat`
 
@@ -341,6 +342,13 @@ Filters adjacent matching lines (`uniq file.txt`). Usually used with sort to get
 Examples:
 
 - Find top 10 most frequent lines: `sort newfile.txt | uniq -c | sort -rn | head -n 10`
+
+---
+
+## `shuf`
+
+Generate a random permutation of input.
+Example: `seq 10 | shuf`
 
 ---
 
