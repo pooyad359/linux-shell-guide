@@ -178,6 +178,7 @@ Search the content of a file. Simple example is `grep hello hello.txt`, which se
 - `-H`: Include file name for each match
 - `-l`: files with match. `grep -r -l 'import torch'` lists the files that contain phrase `import torch`.
 - `-L`: files without match
+- `-P`: enables Perl-Compatible Regular Expressions (PCRE)
 
 ### Context
 
