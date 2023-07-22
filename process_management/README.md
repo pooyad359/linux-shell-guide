@@ -32,6 +32,16 @@ Use command `ps` to see a list of running processes. By default it only shows th
 - Search for a process by name (e.g., `python`): `ps axww | grep python`
 - Search for a process by name and get PIDs: `ps -axww | grep python | cut -f 1 -d ' '` or `ps -axww | grep python | awk '{print $1}'`
 
+Another way to find processes is using `pgrep`. It's a command like `grep` but it is used to find processes.
+
+1. `pgrep firefox`: Get PIDs of "firefox" processes.
+2. `pgrep -u username chrome`: PIDs of user's "chrome" processes.
+3. `pgrep -x bash`: Get PID of "bash" if running.
+4. `pgrep -f "python script.py"`: PIDs of "python script.py" processes.
+5. `pgrep -c chrome`: Count running "chrome" processes.
+6. `pgrep -d, -u username`: PIDs of user's processes, comma-separated.
+7. `pgrep -l -x firefox`: List names and PIDs of "firefox" processes.
+
 ## Resource Usage
 
 To see the list of top running processes and their resource usage, use `top`.
@@ -80,6 +90,32 @@ We can also move a process to background by running it and then pressing `Ctrl`+
 - `bg N`: Moves a process to background using the job number (`N`)
 - `fg N`: Move a process to foreground using the job number (`N`)
 - `kill %N`: Kill a process using job number. Refer to `kill` for the flags.
+
+## Detached processes
+
+Running a process in detached mode allows for a process to live when the terminal gets killed. One way to run a process in a detached mode is using `nohup` command.
+Usage: `nohup <command> <arguments> &`
+The `&` runs the process in the background.
+
+Another way to run a process in detached mode is by disowning the process using `disown` command.
+Example
+
+```bash
+./command &
+disown # disown last command
+```
+
+```bash
+$ ./command &
+[1] 9876
+$ disown 9876 # disown using pid
+```
+
+```bash
+$ ./command &
+[1] 9876
+$ disown %1 # disown using job id
+```
 
 ## Process Tree
 
