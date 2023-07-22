@@ -350,6 +350,8 @@ Examples:
 Generate a random permutation of input.
 Example: `seq 10 | shuf`
 
+- `-n`: Output at most `n` lines
+
 ---
 
 ## Random String Generation
