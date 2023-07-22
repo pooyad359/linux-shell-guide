@@ -88,3 +88,8 @@ bash script.sh -a -f csv file1.csv file2.csv
 # FILE: file1.csv
 # FILE: file2.csv
 ```
+
+## Default values
+
+To make sure a script always has input arguments use this pattern: `VAR=${1:<message>}`. If the first argument (`$1`) is empty the message will be displayed.
+To set a variable with a default value, use this pattern: `VAR=${1:-VALUE}`. If the first argument (`$1`) is empty `VALUE` will be asigned to `VAR`.
