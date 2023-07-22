@@ -53,6 +53,7 @@ Example:
 - `-P`: Maximum number of concurrent processes
 - `-0` or `--null`: Items are separated by a null, not whitespace.
 - `d CHAR`: Set `CHAR` as item delimiter.
+- `-I%`: Set `%` as a placeholder for input. E.g., move the files to the parent directory: `ls | xargs -I% mv % ../`
 
 ## `parallel`
 
