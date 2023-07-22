@@ -57,6 +57,20 @@ Most import signals are:
 
 Another command is `killall` which is similar to `kill` except it uses process name instead of PID. This is especially helpful if multiple instances of a program are running and we want to terminate all of them.
 
+Another way to kill processes is using `pkill` which uses process name.
+
+- `-f`: Match against the entire command line instead of just the process name.
+- `-u`: Specify the user whose processes should be killed.
+- `-P`: Send the signal to the parent process instead of the matching processes.
+- `-x`: Only match processes whose names exactly match the pattern.
+
+Here are a few examples of using `pkill`:
+
+- `pkill firefox`: Terminates all processes with the name "firefox."
+- `pkill -u username chrome`: Terminates all processes with the name "chrome" owned by "username."
+- `pkill -f "python script.py"`: Terminates all processes that have "python script.py" in their command line.
+- `pkill -x bash`: Terminates only processes with the exact name "bash."
+
 ## Background/Foreground Processes
 
 We can send an application to background when we execute it by adding `&` to the end of execution command. E.g., `python app.py &`
@@ -66,6 +80,10 @@ We can also move a process to background by running it and then pressing `Ctrl`+
 - `bg N`: Moves a process to background using the job number (`N`)
 - `fg N`: Move a process to foreground using the job number (`N`)
 - `kill %N`: Kill a process using job number. Refer to `kill` for the flags.
+
+## Process Tree
+
+`pstree` displays a tree-like representation of running processes on your system. It visually organizes the processes in a hierarchical manner, illustrating their parent-child relationships.
 
 ## TODO
 
