@@ -55,3 +55,21 @@ sleeps for number of seconds entered
 
 Let `x=2` and `y=3`. To calculate the sum of two variables we could use `echo $((x+y))`
 Other operations supported: `+`, `-`, `*`, `/`, `%`. Note `/` is integer division and returns an integer.
+
+## Shortkeys
+
+- `Ctrl` + `w`: Delete the last word
+- `Ctrl` + `u`: Delete the entrie line
+- `Ctrl` + `r`: search command line history
+- `Alt` + `f`/`b`: Move forward/backward a word at a time
+- `Ctrl` + `a`/`e`: Move to beginning and end of line
+- `Ctrl` + `k`: delete (kill) from cursor to the end of line
+- `Alt` + `#` (`Alt` + `Shft` + `3`): Turn the command into a comment by adding `#`
+
+## Command Line History
+
+- `history`: get the command history
+- `!n`: execute nth command in history
+- `!!`: last command
+- `!$`: last argument
+- `!-n`: execute nth command before current (e.g., !-1 last command)
