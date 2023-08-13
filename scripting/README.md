@@ -1,4 +1,4 @@
-# Script Arguments
+# Scripting
 
 Most commands in linux accept arguments and flags. You might want to do the same for your script or function.
 
