@@ -44,7 +44,7 @@ Another way to find processes is using `pgrep`. It's a command like `grep` but i
 
 ## Resource Usage
 
-To see the list of top running processes and their resource usage, use `top`.
+To see the list of top running processes and their resource usage, use `top`. It shows the list of processes and their resource usage in real-time. To exit `top` use `q`. Alternatively, we can use `htop` which is a more user-friendly version of `top`.
 
 ### Flags
 
@@ -121,11 +121,23 @@ $ disown %1 # disown using job id
 
 `pstree` displays a tree-like representation of running processes on your system. It visually organizes the processes in a hierarchical manner, illustrating their parent-child relationships.
 
-## TODO
+## Process ID
 
-- [ ] `top`
-- [ ] `pidof`
-- [ ] `nice`
-- [ ] `renice`
-- [ ] `df`
-- [ ] `free`
+Every process has a unique ID called PID. We can use `ps` command to see the list of running processes and their PIDs. We can also use `pidof` command to get the PID of a process by its name.
+
+Examples:
+
+- `pidof python`: Get PID of "python" process.
+- `pidof -s python`: Get PID of "python" process, single PID.
+- `pidof -x python`: Get PID of "python" process, exact match.
+- `pidof -x scrip.sh`: Get PID of "script.sh" process, exact match.
+
+## Memory Usage
+
+`free` command shows the amount of used and free system memory. It also shows the amount of memory used by the kernel and buffers.
+Examples:
+
+- `free`: Shows the amount of used and free system memory.
+- `free -h`: Shows the amount of used and free system memory in human-readable format.
+- `free -<SIZE>`: Shows the amount of used and free system memory. SIZE can be `b`, `k`, `m`, `g`, `B`, `K`, `M`, `G` for bytes, kilobytes, megabytes, and gigabytes respectively.
+- `free -s <SECONDS>`: Shows the amount of used and free system memory every SECONDS seconds.
