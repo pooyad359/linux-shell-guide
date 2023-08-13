@@ -60,3 +60,5 @@ Examples:
 
 - Create tar.gz from multiple files: `tar -czf archive.tar.gz file1 file2`
   > **Same syntax can be used for viewing and extracting .tar.gz files**
+- Change directory (temporarily) before compressing the files: `tar -czf archive.tar.gz -C my_directory .`
+  > **`-C` or `--directory` changes the directory before compression before compression; hence, when extracting, the directory won't appear.**
