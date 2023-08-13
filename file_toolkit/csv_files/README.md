@@ -80,6 +80,7 @@ Print descriptive statistics for all columns in a CSV file.
 #### `csvsql`
 
 Generate SQL statements for a CSV file or execute those statements directly on a database.
+
 Usecases:
 
 - Insert a csv file to a SQL database: `csvsql --insert --db "mysql://user:password@host/database" data.csv`
@@ -108,4 +109,78 @@ One of the main usecases for this command is to run query directly against a csv
 - Create a table and insert file into database: `csvsql --db sqlite:///database.db --insert mytable.csv --table data`
   - `--insert` flag is only valid when `--db` is specified.
   - `--table` is to specify table name (optional)
-  - You can use the database binary to query the database: `sqlite3 database.db "select * from data"`. For more information see `sqlite` section.
+  - You can use `sql2csv`  to query the tables. Alternatively, use the database binary to query the database: `sqlite3 database.db "select * from data"`. For more information see `sqlite` section.
+
+#### `in2csv`
+
+Convert tabular data from various formats into CSV.
+
+- Convert Excel file to CSV: `in2csv file.xlsx > file.csv`
+- Convert Excel file to CSV with specific sheet: `in2csv file.xlsx --sheet "Sheet1" > file.csv`
+- Convert JSON file to CSV: `in2csv file.json > file.csv`
+- Combine with `jq`: `jq .results[0] file.json | in2csv -f json > file.csv`
+
+##### `in2csv` flags
+
+- `-f <FORMAT>`: Specify input format. Supported formats: `csv`, `dbf`, `fixed`, `xls`, `xlsx`, `json`, `ndjson`, `html`, `ltsv`, `ods`, `tsv`, `sqlite`
+- `-s <SHEET>` or `--sheet <SHEET>`: Specify sheet name for Excel files
+
+#### `sql2csv`
+
+Query a SQL database and output results in CSV format:
+
+```bash
+csvsql --db "sqlite:///database.db" --insert data.csv --table data # Insert data into database
+sql2csv --db "sqlite:///database.db" --query "select * from data" > data.csv # query the database
+```
+
+#### `csvjson`
+
+Convert CSV to JSON and GeoJSON. Example: `csv2json file.csv > file.json`
+Normally, the output is a list of dictionaries. To get dictionary as output, use `-k` flag you can specify a column to be used as key.
+
+- `--lat <COLUMN>`: Specify column name for latitude
+- `--lon <COLUMN>`: Specify column name for longitude
+- `--k <COLUMN>`: Specify column name for key
+- `--crs <CRS>`: Specify coordinate reference system
+- `--indent <N>`: Specify indentation level
+- `--geometry <GEOMETRY>`: Specify geometry type
+
+#### `csvjoin`
+
+Execute a SQL-like join to merge CSV files on a specified column or columns.
+Consider the following tables:
+
+```bash
+# names.csv
+| id | name    |
+|----|---------|
+| 1  | Alice   |
+| 2  | Bob     |
+| 3  | Charlie |
+
+# grades.csv
+| id | subject  | grade |
+|----|----------|-------|
+| 1  | Math     | A     |
+| 1  | Science  | B     |
+| 2  | Math     | B+    |
+| 3  | Science  | A+    |
+```
+
+csvjoin will merge the two tables based on the `id` column: `csvjoin -c id names.csv grades.csv`. `-c` flag is used to specify the column(s) to join on. It can be either a single column or multiple columns separated by comma. The column can be specified by name or index.
+Join types:
+
+- `--left`: Left join
+- `--right`: Right join
+- `--outer`: Outer join
+
+#### `csvstack`
+
+Stack up the rows from multiple CSV files, optionally adding a grouping value.
+
+- Simple stacking (stack all rows): `csvstack file1.csv file2.csv`
+- Stack with grouping: `csvstack -g "file1,file2" file1.csv file2.csv`
+  > It adds a column named `group` and the value of the column is the name of the file.
+- Stack with grouping (specify column name): `csvstack -g "file1,file2" -n "file" file1.csv file2.csv`
+  > It adds a column named `file` and the value of the column is the name of the file.
