@@ -1,5 +1,24 @@
 # Flow Control
 
+## Table of Contents
+
+- [IF statement](#if-statement)
+  - [Operators](#operators)
+  - [Boolean Operation](#boolean-operation)
+- [Arrays](#arrays)
+  - [Appending to an array](#appending-to-an-array)
+  - [Deleting elements](#deleting-elements)
+- [For Loops](#for-loops)
+  - [Looping over array](#looping-over-array)
+- [While Loops](#while-loops)
+- [CASE](#case)
+  - [Special operators](#special-operators)
+- [Inline if statement](#inline-if-statement)
+- [Functions](#functions)
+  - [Scope](#scope)
+  - [Return Values](#return-values)
+  - [Arguments](#arguments)
+
 ## IF statement
 
 Be mindful of space between characters when using if statement.
@@ -128,6 +147,19 @@ Returns:
 1
 2
 ```
+
+## While Loops
+
+The syntax of a while loop is:
+
+```bash
+while <condition>
+do
+    commands
+done
+```
+
+You can use `break` and `continue` to break out of the loop or skip the rest of the commands in the loop. You can use `While true` to create an infinite loop.
 
 ## CASE
 
