@@ -1,5 +1,10 @@
 # Math
 
+## basic arithmatic
+
+Let `x=2` and `y=3`. To calculate the sum of two variables we could use `echo $((x+y))`
+Other operations supported: `+`, `-`, `*`, `/`, `%`. Note `/` is integer division and returns an integer.
+
 ## `factor`
 
 Prime factorization of a number:

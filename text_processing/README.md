@@ -1,4 +1,4 @@
-# Text Operations
+# Text Processing
 
 ## Table of Contents
 
