@@ -86,6 +86,10 @@ jq '.<key1_name>, .<key2_name>' file.json
 - `min_by`, `max_by`, `unique_by`: Same as above, but can use a key/path for operation.
 - `..`: Allows recursive search for a key.
     `cat file.json | jq '.. | .<key_name>? | select(. != null)'`
+- `to_entry`: Converts an object to an array of key-value pairs.
+    > ```echo '{"a": 1, "b": 2}' | jq 'to_entries'```
+- `from_entries`: Converts an array of key-value pairs to an object.
+    > ```echo '[{"key": "a", "value": 1}, {"key": "b", "value": 2}]' | jq 'from_entries'```
 
 ### Piping
 
@@ -106,3 +110,41 @@ cat file.json | jq '.<key-name> | length'
 ```bash
 cat file.json | jq '{<new-key1>: .<key1_name>, <new-key2>: .<key2_name>}'
 ```
+
+Other Examples:
+
+```json
+[
+    {
+        "first_name": "John",
+        "last_name": "Doe",
+        "age": 25
+    },
+    {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "age": 24
+    },
+    {
+        "first_name": "Jack",
+        "last_name": "Smith",
+        "age": 34
+    },
+    {
+        "first_name": "Jill",
+        "last_name": "Miller",
+        "age": 52
+    }
+]
+```
+
+- Print first name and last name of all users:
+    > `cat users.json | jq '.[] | "\(.first_name) \(.last_name)"'`
+- Count number of users:
+    > `cat users.json | jq '. | length'`
+
+- Show users with age greater than 30:
+    > `cat users.json | jq '.[] | select(.age > 30)'`
+- Return the first name and last name of users (return a list of objects):
+    > `cat users.json | jq '. | map({first_name:.first_name, last_name:.last_name})'`
+-
