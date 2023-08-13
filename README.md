@@ -9,7 +9,7 @@ This repository contains a collection of notes and snippets for learning Linux C
 - [CLI Basics](/cli_basics)
 - [Environment Variables](/environment_variables)
 - [File Compression](/file_compression)
-- [File Operations](/file_operations)
+- [File and Disk Management](/file_operations)
 - [File Toolkit](/file_toolkit)
 - [Flow Control](/flow_control)
 - [Math and Statistics](/math)
