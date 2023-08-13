@@ -4,6 +4,24 @@
 
 It's a manipulation toolkit for CSV files.
 
+### Table of Contents
+
+1. [Installation](#installation)
+2. [Commands](#commands)
+   1. [`csvclean`](#csvclean)
+   2. [`csvcut`](#csvcut)
+   3. [`csvformat`](#csvformat)
+   4. [`csvgrep`](#csvgrep)
+   5. [`csvlook`](#csvlook)
+   6. [`csvsort`](#csvsort)
+   7. [`csvstat`](#csvstat)
+   8. [`csvsql`](#csvsql)
+   9. [`in2csv`](#in2csv)
+   10. [`sql2csv`](#sql2csv)
+   11. [`csvjson`](#csvjson)
+   12. [`csvjoin`](#csvjoin)
+   13. [`csvstack`](#csvstack)
+
 ### Installation
 
 ```bash
