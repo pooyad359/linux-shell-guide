@@ -6,23 +6,23 @@ This repository contains a collection of notes and snippets for learning Linux C
 
 ## Topics
 
-- [CLI Basics](/cli-basics)
+- [CLI Basics](/cli_basics)
 - [Environment Variables](/environment_variables)
-- [File Compression](/file-compression)
-- [File Operations](/file-operations)
-- [File Toolkit](/file-toolkit)
-- [Flow Control](/flow-control)
+- [File Compression](/file_compression)
+- [File Operations](/file_operations)
+- [File Toolkit](/file_toolkit)
+- [Flow Control](/flow_control)
 - [Math and Statistics](/math)
 - [Network](/network)
-- [Process Management](/process-management)
+- [Process Management](/process_management)
 - [Scripting](/scripting)
 - [System](/system)
-- [Terminal Management](/terminal-management)
-- [Text Processing](/text-processing)
-- [User Management](/network)
+- [Terminal Management](/terminal_management)
+- [Text Processing](/text_processing)
+- [User Management](/user_management)
 - [Miscellaneous](/miscellaneous)
-- [Useful Programs](/useful-programs)
-- [How to](/how-to)
+- [Useful Programs](/useful_programs)
+- [How to](/how_to)
 
 ## TODO
 
