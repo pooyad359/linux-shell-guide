@@ -73,3 +73,9 @@ Other operations supported: `+`, `-`, `*`, `/`, `%`. Note `/` is integer divisio
 - `!!`: last command
 - `!$`: last argument
 - `!-n`: execute nth command before current (e.g., !-1 last command)
+
+## TODO
+
+- [ ] docker
+- [ ] pandoc
+- [ ] ffmpeg
