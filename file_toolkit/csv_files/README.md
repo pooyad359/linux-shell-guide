@@ -76,3 +76,36 @@ Print descriptive statistics for all columns in a CSV file.
   - The length of the longest values: `--len`
   - Lists of frequent values: `--freq`
   - Total row count: `--count`
+
+#### `csvsql`
+
+Generate SQL statements for a CSV file or execute those statements directly on a database.
+Usecases:
+
+- Insert a csv file to a SQL database: `csvsql --insert --db "mysql://user:password@host/database" data.csv`
+- Insert a csv file to a SQlite database: `csvsql --db sqlite:///new_database.db --insert your_data.csv`
+- Run query against a csv file: `csvsql --query "select * from 'data'" data.csv`
+
+##### `csvsql` flags
+
+- `-d <DELIMITER>`: specify delimiter
+- `-t`: Use tabs as delimiter
+- `--blanks`: Do not convert "", "na", "n/a", "none", "null", "." to NULL
+- `-H`: No header
+- `-K N` or `--skip-lines N`: Skip the first `N` lines.
+- `-l` or `--linenumbers`: Insert a column of line numbers.
+- `--db CONNECTION_STRING`: If present, a sqlalchemy connection string to use to directly execute generated SQL on a database.
+- `--query QUERY`: Execute one or more SQL queries delimited by ";" and output the result of the last query as CSV.
+- `--insert`: In addition to creating the table, also insert the data into the table. Only valid when --db is specified.
+- `--prefix PREFIX`: Add an expression following the INSERT keyword, like OR IGNORE or OR REPLACE.
+- `--tables TABLE_NAMES`: Specify the names of the tables to be created. By default, the tables will be named after the filenames without extensions or "stdin".
+
+One of the main usecases for this command is to run query directly against a csv file.
+
+- Query a csv file: `csvsql --query 'select * from mytable' mytable.csv`
+- Specify table name: `csvsql --query 'select * from mydata' mytable.csv --table mydata`
+- Run query against multiple files: `csvsql select * from part1 union all select * from part2` part1.csv part2.csv
+- Create a table and insert file into database: `csvsql --db sqlite:///database.db --insert mytable.csv --table data`
+  - `--insert` flag is only valid when `--db` is specified.
+  - `--table` is to specify table name (optional)
+  - You can use the database binary to query the database: `sqlite3 database.db "select * from data"`. For more information see `sqlite` section.
