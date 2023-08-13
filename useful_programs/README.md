@@ -2,5 +2,7 @@
 
 ## TODO
 
-[ ] `ffmpeg`
-[ ] `convert`
+- [ ] `ffmpeg`
+- [ ] `convert`
+- [ ] `docker`
+- [ ] `pandoc`
