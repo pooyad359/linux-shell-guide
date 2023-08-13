@@ -9,6 +9,7 @@
 - `Ctrl` + `a`/`e`: Move to beginning and end of line
 - `Ctrl` + `k`: delete (kill) from cursor to the end of line
 - `Alt` + `#` (`Alt` + `Shft` + `3`): Turn the command into a comment by adding `#`
+- `Ctrl` + `l`: Clear the screen
 
 ## Command Line History
 
