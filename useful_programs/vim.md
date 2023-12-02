@@ -1,5 +1,41 @@
 # Vim
 
+## Operators
+- `y`: Yank (copy)
+- `d`: Delete and save to register
+- `c`: Delete and save to register and start insert mode
+- `p`: Paste yanked text after cursor
+- `P`: Paste yanked text before cursor
+- `dd`, `cc`, `yy`: delete/copy the entire current line
+
+
+### Combine with motion
+Operators can be combined with a motion to specify what they should act on. Examples:
+- `yw`: yank from cursor to the end of the word
+- `d}`: delete from cursor to the end of paragraph
+- `c$`: delete from cursor to the end of line
+- `d2w`: delete the next two words (from cursor)
+- `d2j`: delete the current line and the next two lines
+
+### Text Objects
+You can apply the operators to a text objects, such as parantheses, brackets, quotes, etc.
+- `i`: For inner object
+- `a`: For outer object
+
+Examples:
+- `di(`: Delete the text in the parentheses
+- `da(`: Delete the paratheses including the text inside
+
+Objects:
+- `w`: current word. Example: `diw` to remove the entire word under the cursor
+- `p`: current paragraph
+- `s`: current sentence
+- `(`, `)`, `{`, `}`, `<`, `>`, `[`, `]`, `"`, `'`, or `` ` ``: for current pair
+
+### Undo/Redo
+You can undo changes by pressing `u`. To redo the undone changes press `Ctrl-R`. Both can be combined with a number to repeat the action, e.g., `3u` to undo the last three changes.
+
+
 ## Navigation
 ### Basic Navigation
 - `h`: left
