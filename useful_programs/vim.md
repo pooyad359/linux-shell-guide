@@ -8,6 +8,20 @@
 - `P`: Paste yanked text before cursor
 - `dd`, `cc`, `yy`: delete/copy the entire current line
 
+### Other operators
+- `<`: Indent Left
+- `>`: Indent right
+- `=`: Auto indent
+  - `=`, `<`, `>` can be used twice to apply to the current line (`==`) or with number to apply to multiple lines (`3<<` for three lines)
+- `!! <command>`: Will replace the current line with the output of shell command
+  - `!! tr _ -`: To replace `_` with `-` in the current line
+  - `date`: To insert current timestamp to the current line
+- `:! <command>`: Passes the current lines to the shell command and replaces them with the output. Use with visual mode (`Ctrl-V`) to select multilines
+  - `:! sort`: Sort the selected lines
+  - `:! grep <keyword>`: Only keep the lines that contain `keyword`
+- `gU`: Convert to uppercase. E.g., `gUiw` to convert the current word to uppercase
+- `gu`: Convert to lowercase.
+- `g~`: Swap case
 
 ### Combine with motion
 Operators can be combined with a motion to specify what they should act on. Examples:
@@ -107,4 +121,12 @@ You can undo changes by pressing `u`. To redo the undone changes press `Ctrl-R`.
   - `m<char>`: Assign `char` as a bookmark to the current position
   - `` `<char> ``: Go to line and column of bookmark `<char>`
   - `'<char>`: Go to line of bookmark `<char>`
- 
+
+## Edit Modes
+- `i`: Insert mode
+- `o`: Add new line below and insert
+- `O`: Add new line above and insert
+- `C`: Delete until end of line and insert
+- `a` Append (start insert after the current position)
+- `A`: Append to end of line (start inserting at the end of line)
+- `S`: Delete current line and insert
