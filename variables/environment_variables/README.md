@@ -2,6 +2,14 @@
 
 This section covers commands related to environment variables.
 
+## Table of Contents
+
+- [env](#env)
+- [export](#export)
+- [unset](#unset)
+- [source](#source)
+- [Alias](#alias)
+
 ## `env`
 
 By running `env` in the terminal you will get a list of environment variables.
@@ -41,6 +49,22 @@ One common use case of `export` is to append a path to `PATH` environment variab
 ```bash
 export PATH=$PATH:<new path>
 ```
+
+## `set`
+
+If used without flags it displays all shell variables.
+Main flags are:
+
+- `-b`: Notify of job termination immediately. Useful when running commands in background.
+- `-e`: Exit immediately if a command exits with a non-zero status
+- `-n`: Read commands but do not execute them. This may be used to check a script for syntax errors.
+- `-o`: Set options
+- `-x`: Print commands and their arguments as they are executed (useful for debugging)
+- `-v`: Print shell input lines as they are read. Unlike `-x`, these lines are not passed to the shell parser.
+
+    > *Using `-o` flag with no arguments will display all options*
+
+    > *Using any flag with `+` sign will disable the option*
 
 ## `unset`
 

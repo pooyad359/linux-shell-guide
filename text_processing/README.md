@@ -1,4 +1,4 @@
-# Text Operations
+# Text Processing
 
 ## Table of Contents
 
@@ -18,7 +18,8 @@
 14. [Split files with (`split`)](#split-files-with-split)
 15. [`tr`](#tr)
 16. [`uniq`](#uniq)
-17. [Random String Generation](#random-string-generation)
+17. [`shuf`](#shuf)
+18. [Random String Generation](#random-string-generation)
 
 ## `cat`
 
@@ -177,6 +178,7 @@ Search the content of a file. Simple example is `grep hello hello.txt`, which se
 - `-H`: Include file name for each match
 - `-l`: files with match. `grep -r -l 'import torch'` lists the files that contain phrase `import torch`.
 - `-L`: files without match
+- `-P`: enables Perl-Compatible Regular Expressions (PCRE)
 
 ### Context
 
@@ -341,6 +343,15 @@ Filters adjacent matching lines (`uniq file.txt`). Usually used with sort to get
 Examples:
 
 - Find top 10 most frequent lines: `sort newfile.txt | uniq -c | sort -rn | head -n 10`
+
+---
+
+## `shuf`
+
+Generate a random permutation of input.
+Example: `seq 10 | shuf`
+
+- `-n`: Output at most `n` lines
 
 ---
 

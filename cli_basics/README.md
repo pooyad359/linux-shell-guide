@@ -1,5 +1,26 @@
 # Basics of Using CLI
 
+## Shortkeys
+
+- `Ctrl` + `w`: Delete the last word
+- `Ctrl` + `u`: Delete the entrie line
+- `Ctrl` + `r`: search command line history
+- `Alt` + `f`/`b`: Move forward/backward a word at a time
+- `Ctrl` + `a`/`e`: Move to beginning and end of line
+- `Ctrl` + `k`: delete (kill) from cursor to the end of line
+- `Alt` + `#` (`Alt` + `Shft` + `3`): Turn the command into a comment by adding `#`
+- `Ctrl` + `l`: Clear the screen
+
+## Command Line History
+
+- `history`: get the command history
+- `!n`: execute nth command in history
+- `!!`: last command
+- `!$`: last argument
+- `!-n`: execute nth command before current (e.g., !-1 last command)
+- `!string`: execute last command starting with `string`
+- `!?string`: execute last command containing `string`
+
 ## Piping
 
 We can use `|` to pass the output of a command as input to the next command:

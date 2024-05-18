@@ -66,6 +66,33 @@ netstat -nltp
 - `--listening`: List all listening ports
 - `--tcp`: List listening tcp ports
 
+## Sockets
+
+`ss` command provides detailed socket statistics.
+
+- `ss -a`: Display all active connections and listening sockets.
+- `ss -t`: Show only TCP connections and listening sockets.
+- `ss -u`: Show only UDP connections and listening sockets.
+- `ss -n`: Display numerical addresses (IP addresses and port numbers) instead of resolving them to hostnames and service names.
+- `ss -p`: Show the process or program name associated with each network connection.
+- `ss -r`: Display the kernel routing table.
+- `ss -s`: Display network statistics, such as the number of packets and errors.
+- `ss -l`: Show only listening sockets (both TCP and UDP).
+- `ss -i`: Display information about network interfaces.
+
+Examples:
+
+```bash
+# Show all TCP sockets connected to the local HTTPS port (443):
+ss -t src :443
+
+# Show all TCP sockets listening on the local 8080 port:
+ss -lt src :8080
+
+# Display detailed information about all listening TCP sockets on a system
+ss -plat
+```
+
 ## Find your public IP
 
 ```bash
