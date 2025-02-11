@@ -122,7 +122,7 @@ You can undo changes by pressing `u`. To redo the undone changes press `Ctrl-R`.
   - `` `<char> ``: Go to line and column of bookmark `<char>`
   - `'<char>`: Go to line of bookmark `<char>`
 
-  ### Find and Replace
+## Find and Replace
   To find and replace, vim uses a similar syntax to `sed`
   - `:s/old/new/` - Replace first occurrence of "old" with "new"
   - `:s/old/new/g` - Replace all occurrences of "old" with "new" in the current line For the entire file:
@@ -145,7 +145,43 @@ You can undo changes by pressing `u`. To redo the undone changes press `Ctrl-R`.
   - `\w` - word character (letter, digit, underscore)
   - `\W` - non-word character
   - `\a` - alphabetic character
- 
+
+## Configuring vim
+The `:set` command in Vim is used to configure various options. Here are some commonly used settings:
+
+Line Numbers and Display:
+- `:set number` (or `nu`) - Show line numbers
+- `:set relativenumber` (or `rnu`) - Show relative line numbers
+- `:set wrap` / `:set nowrap` - Enable/disable line wrapping
+- `:set cursorline` - Highlight current line
+- `:set list` - Show hidden characters (tabs, trailing spaces)
+
+Indentation and Formatting:
+- `:set autoindent` - Copy indent from current line when starting new line
+- `:set expandtab` - Convert tabs to spaces
+- `:set tabstop=4` - Set tab width to 4 spaces
+- `:set shiftwidth=4` - Set indentation width
+- `:set smartindent` - Smart autoindenting when starting a new line
+
+Search Settings:
+- `:set ignorecase` - Case insensitive search
+- `:set smartcase` - Override ignorecase if search pattern has uppercase
+- `:set incsearch` - Show partial matches while typing search
+- `:set hlsearch` - Highlight all search matches
+
+Useful Combinations:
+- `:set number relativenumber` - Show both absolute and relative numbers
+- `:set expandtab tabstop=2 shiftwidth=2` - Common setup for 2-space indentation
+
+To make settings permanent:
+1. Edit your `~/.vimrc` file
+2. Add the settings without the colon (e.g., `set number`)
+
+You can also:
+- Use `:set all` to see all settings
+- Add `no` prefix to disable (e.g., `:set noignorecase`)
+- Add `?` to check current value (e.g., `:set tabstop?`)
+
 ## Edit Modes
 - `i`: Insert mode
 - `o`: Add new line below and insert
