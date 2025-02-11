@@ -122,6 +122,30 @@ You can undo changes by pressing `u`. To redo the undone changes press `Ctrl-R`.
   - `` `<char> ``: Go to line and column of bookmark `<char>`
   - `'<char>`: Go to line of bookmark `<char>`
 
+  ### Find and Replace
+  To find and replace, vim uses a similar syntax to `sed`
+  - `:s/old/new/` - Replace first occurrence of "old" with "new"
+  - `:s/old/new/g` - Replace all occurrences of "old" with "new" in the current line For the entire file:
+  - `:%s/old/new/g` - Replace all occurrences of "old" with "new" in the whole file
+  - `:%s/old/new/gc` - Replace all occurrences with confirmation (it will ask you for each replacement)
+ 
+  Some useful flags you can add:
+
+  - `i` for case insensitive search (e.g., `:%s/old/new/gi`)
+  - `c` for confirmation
+  - `g` for global (all occurrences in the line)
+
+  Some common special characters that can be used with this command:
+  - `\r` - newline
+  - `\t` - tab
+  - `\s` - whitespace (space or tab)
+  - `\S` - non-whitespace character
+  - `\d` - digit (0-9)
+  - `\D` - non-digit
+  - `\w` - word character (letter, digit, underscore)
+  - `\W` - non-word character
+  - `\a` - alphabetic character
+ 
 ## Edit Modes
 - `i`: Insert mode
 - `o`: Add new line below and insert
