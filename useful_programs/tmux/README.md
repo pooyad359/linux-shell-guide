@@ -6,6 +6,8 @@ Start a new session by simply running `tmux` in command line. `tmux` commands st
 
 ## Commands
 
+Commands can be executed through short keys or by switching to command mode (`Ctrl` + `B`) and entering the command. For instance, `Ctrl` + `B` and then entering `:new` would create a new session.
+
 ### Windows
 
 - `Ctrl` + `B`, `c`: Create a new window
@@ -19,6 +21,8 @@ Start a new session by simply running `tmux` in command line. `tmux` commands st
 - `Ctrl` + `B`, `"`: Create a new pane by splitting the window vertically
 - `Ctrl` + `B`, `Ctrl` + `<Arrow>`: Resize a pane
 - `Ctrl` + `B`, `x`: Close the current pane
+- `Ctrl` + `B`, `q`: Show pane numbers on the screen
+- `Ctrl` + `B`, `q`, `<NUM>`: To switch to specific pane based on the number
 
 ### Navigation
 
